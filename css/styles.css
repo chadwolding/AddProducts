@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+*{
+    font-family: 'Black Han Sans', sans-serif !important;
+}
+
+body{
+    background-color: teal;
+}
+
+button{
+    color: black !important;
+    border: 4px solid white !important;
+}
+
+.errorMessage{
+    color: red !important;
+    display: table;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    padding-top: 0px !important;
+}
+
+form{
+    max-width: 700px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: burlywood;
+    padding: 15px;
+    border: 10px solid white;
+}
+
+h1{
+    font-size: 60px;
+    color: black !important;
+}
+
+label, select{
+    color: black !important;
+}
+
+table{
+    color: white;
+}
+
+th{
+    font-size: 20px;
+    padding: 5px;
+}
+
+td{
+    border: 1px solid white;
+    padding: 5px;
+}
