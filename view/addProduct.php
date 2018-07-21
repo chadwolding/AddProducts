@@ -13,44 +13,31 @@ include('../model/Tools.php');
 
 if (isset($_POST['submit'])){
 
+    $_POST = htmlspecialchars(filter_var_array($_POST, FILTER_SANITIZE_STRING));
+
     // The type of product
     if (isset($_POST['productChoice'])){
         $productChoice = $_POST['productChoice'];
-    }
-    else{
-        $productChoice = NULL;
     }
 
     // Check if the title is set.
     if (isset($_POST['title'])){
         $title = $_POST['title'];
     }
-    else{
-        $title = NULL;
-    }
 
     // Check if the description is set.
     if (isset($_POST['description'])){
         $description = $_POST['description'];
-    }
-    else{
-        $description = NULL;
     }
 
     // Check if the price is set.
     if (isset($_POST['price'])){
         $price = $_POST['price'];
     }
-    else{
-        $price = NULL;
-    }
 
     // Check if the shipper is set.
     if (isset($_POST['shipper'])){
         $shipper = $_POST['shipper'];
-    }
-    else{
-        $shipper = NULL;
     }
 
     // Check if the weight is set.
@@ -60,16 +47,10 @@ if (isset($_POST['submit'])){
             $weight = NULL;
         }
     }
-    else{
-        $weight = NULL;
-    }
 
     // Check if recyclable is set.
     if (isset($_POST['recyclable'])){
         $recyclable = $_POST['recyclable'];
-    }
-    else{
-        $recyclable = NULL;
     }
 
     switch ($_POST['productChoice']){
@@ -100,7 +81,6 @@ if (isset($_POST['submit'])){
             $electronic->AddProductToDB($productChoice, $title, $description, $price,NULL, NULL, $recyclable);
             break;
     }
-
 }
 
 ?>
@@ -110,6 +90,7 @@ if (isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Chad Wolding</title>
+    <link rel="icon" href="home.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
